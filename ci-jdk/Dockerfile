@@ -1,7 +1,8 @@
 FROM jeejen/jdk
 
 RUN apt-get update && \
-    apt-get -y install docker.io \
+    apt-get -y install python \
+        docker.io \
         apt-transport-https \
         ca-certificates \
         curl \
@@ -13,5 +14,5 @@ RUN apt-get update && \
     apt-get update && \
     apt-get -y install docker-ce && \
     rm -rf /var/lib/apt/lists/* && \
-    apt-get clean all \
+    apt-get clean all && \
     pip install ansible
